@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiche RP de Personnage</title>
+  <style>
+    /* Style de base pour le formulaire et la fiche */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f8f8f8;
+    }
+
+    #ficheForm {
+      margin-bottom: 20px;
+    }
+
+    #fiche {
+      width: 600px;
+      height: auto;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+      background-color: #fff;
+      border: 2px solid #ccc;
+      font-family: 'Arial', sans-serif;
+    }
+
+    #fiche img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section input, .section select, .section textarea {
+      width: 100%;
+      padding: 5px;
+      margin: 5px 0;
+    }
+
+    .section label {
+      font-weight: bold;
+    }
+
+    .section textarea {
+      height: 80px;
+      resize: vertical;
+    }
+
+    #fiche .content {
+      font-family: 'Arial', sans-serif;
+    }
+
+    .decorations {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 30px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Personnalisez votre fiche de personnage RP</h1>
+  
+  <!-- Formulaire pour remplir la fiche -->
+  <form id="ficheForm">
+    <div class="section">
+      <label for="photoPersonnage">Photo de votre personnage :</label>
+      <input type="file" id="photoPersonnage" name="photoPersonnage"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="imageFond">Image de fond :</label>
+      <input type="file" id="imageFond" name="imageFond"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="couleurFond">Couleur de fond :</label>
+      <input type="color" id="couleurFond" name="couleurFond"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="decoration">Décoration :</label>
+      <select id="decoration" name="decoration">
+        <option value="none">Aucune</option>
+        <option value="bouclier">Bouclier</option>
+        <option value="epée">Épée</option>
+        <option value="dragon">Dragon</option>
+        <option value="herbesMagiques">Herbes Magiques</option>
+        <option value="drapeau">Drapeau</option>
+      </select><br><br>
+    </div>
+
+    <div class="section">
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="age">Âge :</label>
+      <input type="text" id="age" name="age"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="race">Race :</label>
+      <input type="text" id="race" name="race"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="classe">Classe :</label>
+      <input type="text" id="classe" name="classe"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="allegeance">Allégeance :</label>
+      <input type="text" id="allegeance" name="allegeance"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="taille">Taille :</label>
+      <input type="text" id="taille" name="taille"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="poids">Poids :</label>
+      <input type="text" id="poids" name="poids"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="couleurYeux">Couleur des yeux :</label>
+      <input type="text" id="couleurYeux" name="couleurYeux"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="cheveux">Cheveux :</label>
+      <input type="text" id="cheveux" name="cheveux"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="traitsDistinctifs">Traits distinctifs :</label>
+      <input type="text" id="traitsDistinctifs" name="traitsDistinctifs"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="qualites">Principales qualités :</label>
+      <input type="text" id="qualites" name="qualites"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="defauts">Défauts :</label>
+      <input type="text" id="defauts" name="defauts"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="motivations">Motivations principales :</label>
+      <input type="text" id="motivations" name="motivations"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="peurs">Peur(s) :</label>
+      <input type="text" id="peurs" name="peurs"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="lieuNaissance">Lieu de naissance :</label>
+      <input type="text" id="lieuNaissance" name="lieuNaissance"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="histoire">Résumé de l’histoire :</label>
+      <textarea id="histoire" name="histoire"></textarea><br><br>
+    </div>
+
+    <div class="section">
+      <label for="competencesPrincipales">Compétences principales :</label>
+      <input type="text" id="competencesPrincipales" name="competencesPrincipales"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="talentsSecondaires">Talents secondaires :</label>
+      <input type="text" id="talentsSecondaires" name="talentsSecondaires"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="pointsFaibles">Points faibles :</label>
+      <input type="text" id="pointsFaibles" name="pointsFaibles"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="armes">Armes principales :</label>
+      <input type="text" id="armes" name="armes"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="armures">Armures :</label>
+      <input type="text" id="armures" name="armures"><br><br>
+    </div>
+
+    <div class="section">
+      <label for="objetsSpeciaux">Objets spéciaux :</label>
+      <input type="text" id="objetsSpeciaux" name="objetsSpeciaux"><br><br>
+    </div>
+
+    <button type="submit">Générer la fiche</button>
+  </form>
+
+  <!-- Zone où la fiche sera affichée pour prévisualisation -->
+  <div id="fiche">
+    <div class="content">
+      <h2 id="ficheNom"></h2>
+      <p id="ficheAge"></p>
+      <p id="ficheRace"></p>
+      <p id="ficheClasse"></p>
+      <p id="ficheAllegeance"></p>
+
+      <h3>Apparence physique</h3>
+      <p id="ficheTaille"></p>
+      <p id="fichePoids"></p>
+      <p id="ficheCouleurYeux"></p>
+      <p id="ficheCheveux"></p>
+      <p id="ficheTraitsDistinctifs"></p>
+
+      <h3>Personnalité</h3>
+      <p id="ficheQualites"></p>
+      <p id="ficheDefauts"></p>
+      <p id="ficheMotivations"></p>
+      <p id="fichePeurs"></p>
+
+      <h3>Origines et Histoire</h3>
+      <p id="ficheLieuNaissance"></p>
+      <p id="ficheHistoire"></p>
+
+      <h3>Compétences et Talents</h3>
+      <p id="ficheCompetences"></p>
+      <p id="ficheTalents"></p>
+      <p id="fichePointsFaibles"></p>
+
+      <h3>Équipement</h3>
+      <p id="ficheArmes"></p>
+      <p id="ficheArmures"></p>
+      <p id="ficheObjets"></p>
+    </div>
+    <div class="decorations" id="ficheDecoration"></div>
+  </div>
+
+  <script>
+    document.getElementById("ficheForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Récupération des valeurs du formulaire
+      let nom = document.getElementById("nom").value;
+      let age = document.getElementById("age").value;
+      let race = document.getElementById("race").value;
+      let classe = document.getElementById("classe").value;
+      let allegeance = document.getElementById("allegeance").value;
+
+      let taille = document.getElementById("taille").value;
+      let poids = document.getElementById("poids").value;
+      let couleurYeux = document.getElementById("couleurYeux").value;
+      let cheveux = document.getElementById("cheveux").value;
+      let traitsDistinctifs = document.getElementById("traitsDistinctifs").value;
+
+      let qualites = document.getElementById("qualites").value;
+      let defauts = document.getElementById("defauts").value;
+      let motivations = document.getElementById("motivations").value;
+      let peurs = document.getElementById("peurs").value;
+
+      let lieuNaissance = document.getElementById("lieuNaissance").value;
+      let histoire = document.getElementById("histoire").value;
+
+      let competencesPrincipales = document.getElementById("competencesPrincipales").value;
+      let talentsSecondaires = document.getElementById("talentsSecondaires").value;
+      let pointsFaibles = document.getElementById("pointsFaibles").value;
+
+      let armes = document.getElementById("armes").value;
+      let armures = document.getElementById("armures").value;
+      let objetsSpeciaux = document.getElementById("objetsSpeciaux").value;
+
+      // Mise à jour de la fiche
+      document.getElementById("ficheNom").innerText = nom;
+      document.getElementById("ficheAge").innerText = "Âge : " + age;
+      document.getElementById("ficheRace").innerText = "Race : " + race;
+      document.getElementById("ficheClasse").innerText = "Classe : " + classe;
+      document.getElementById("ficheAllegeance").innerText = "Allégeance : " + allegeance;
+
+      document.getElementById("ficheTaille").innerText = "Taille : " + taille;
+      document.getElementById("fichePoids").innerText = "Poids : " + poids;
+      document.getElementById("ficheCouleurYeux").innerText = "Couleur des yeux : " + couleurYeux;
+      document.getElementById("ficheCheveux").innerText = "Cheveux : " + cheveux;
+      document.getElementById("ficheTraitsDistinctifs").innerText = "Traits distinctifs : " + traitsDistinctifs;
+
+      document.getElementById("ficheQualites").innerText = "Principales qualités : " + qualites;
+      document.getElementById("ficheDefauts").innerText = "Défauts : " + defauts;
+      document.getElementById("ficheMotivations").innerText = "Motivations principales : " + motivations;
+      document.getElementById("fichePeurs").innerText = "Peur(s) : " + peurs;
+
+      document.getElementById("ficheLieuNaissance").innerText = "Lieu de naissance : " + lieuNaissance;
+      document.getElementById("ficheHistoire").innerText = "Histoire : " + histoire;
+
+      document.getElementById("ficheCompetences").innerText = "Compétences principales : " + competencesPrincipales;
+      document.getElementById("ficheTalents").innerText = "Talents secondaires : " + talentsSecondaires;
+      document.getElementById("fichePointsFaibles").innerText = "Points faibles : " + pointsFaibles;
+
+      document.getElementById("ficheArmes").innerText = "Armes principales : " + armes;
+      document.getElementById("ficheArmures").innerText = "Armures : " + armures;
+      document.getElementById("ficheObjets").innerText = "Objets spéciaux : " + objetsSpeciaux;
+
+      // Ajout de décoration si nécessaire
+      let decoration = document.getElementById("decoration").value;
+      let decorationsDiv = document.getElementById("ficheDecoration");
+      decorationsDiv.innerHTML = "";
+
+      if (decoration === "bouclier") {
+        decorationsDiv.innerHTML = "🛡️";
+      } else if (decoration === "epée") {
+        decorationsDiv.innerHTML = "🗡️";
+      } else if (decoration === "dragon") {
+        decorationsDiv.innerHTML = "🐉";
+      } else if (decoration === "herbesMagiques") {
+        decorationsDiv.innerHTML = "🌿";
+      } else if (decoration === "drapeau") {
+        decorationsDiv.innerHTML = "🏴";
+      }
+    });
+  </script>
+
+</body>
+</html>
